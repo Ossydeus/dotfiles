@@ -1,0 +1,43 @@
+#---------------------
+# Background
+#--------------------
+
+set $wallpaper ../The_Manor_by_Refiend.jpg
+output * bg $wallpaper fill
+
+#---------------------
+# Colours
+#---------------------
+
+set $background #190f0d
+set $foreground #d3dcde
+
+set $color0 #190f0d
+set $color1 #9D5D21
+set $color2 #8F7359
+set $color3 #A68F69
+set $color4 #CA9F4E
+set $color5 #778189
+set $color6 #A09A96
+set $color7 #d3dcde
+set $color8 #939a9b
+set $color9 #9D5D21
+set $color10 #8F7359
+set $color11 #A68F69
+set $color12 #CA9F4E
+set $color13 #778189
+set $color14 #A09A96
+set $color15 #d3dcde
+
+
+#app_id                          border          bground         text            indicator       child_border
+client.focused               $color2           $color2         $color1           $color2         $color2
+client.unfocused             $color2           $color1         $color2           $color1         $color1
+client.focused_inactive      $color2           $color1         $color2           $color1         $color1
+client.urgent                $color2           $color2         $color1           $color2         $color1
+
+default_border pixel 2
+
+gaps inner 6
+gaps outer 0
+

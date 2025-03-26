@@ -1,0 +1,27 @@
+# Reloads the config
+bindsym Mod4+Shift+c reload
+
+# Xwayland stuff
+for_window [shell='xwayland'] title_format "[XWayland] %title"
+
+# Waybar
+bar {
+	swaybar_command waybar
+}
+
+# Idle deamon to lock session
+# Doesn't work as drop in... don't know why
+exec_always killall swayidle
+exec_always swayidle -w \
+    timeout 360 '~/.config/sway/swaylock.sh' \
+    timeout 720 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+    before-sleep '~/.config/sway/swaylock.sh -now' 
+
+# Drop-in files
+include ~/.config/sway/config.d/50-system-user.conf
+include ~/.config/sway/config.d/keybinds
+#include ~/.config/sway/config.d/swayidle
+include ~/.config/sway/config.d/appearance
+include ~/.config/sway/config.d/keyboard-layout
+include ~/.config/sway/config.d/trackpad
+#include ~/.config/sway/config.d/laptop-lid-switch

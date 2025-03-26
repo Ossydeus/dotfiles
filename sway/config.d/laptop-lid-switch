@@ -1,0 +1,4 @@
+# Handles laptop lid switch
+# Use [on|off|toggle] for lid closed, open, or a state change
+bindswitch --locked --reload lid:on exec ../swaylock.sh
+# exec systemctl suspend-then-hibernate
