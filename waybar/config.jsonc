@@ -1,0 +1,94 @@
+// -------------------------
+//
+// Check waybar(5) for detailed info
+//
+// --------------------------
+//
+// To do:
+//	- add media module (wireplumber)
+//  - adjust for new side position
+//      - sys-info span? either way make central
+
+
+// _*- mode: jsonc -*-
+{
+	"layer": "top", // Waybar in front of windows
+	"position" : "left", //Waybar position (top|bottom|left|right)
+	//"height": 0, // Leave blank for dynamic value
+	"width": 52,
+	"spacing": 2, // Inter-module spacing 
+	"margin-top": 4,
+	"margin-left": 0,
+	"margin-right": 0,
+	"margin-bottom": 4,
+
+	// Choose the order of modules
+	"modules-left": [
+		"battery",
+		"cpu",
+		"memory",
+		"temperature",
+		"sway/mode",
+		"sway/scratchpad"
+	],
+
+	"modules-center": [
+		"clock"
+	],
+
+	"modules-right": [
+		"media",
+		"brightness",
+		"sway/workspaces"
+	],
+
+
+	// Modules configuration
+	"sway/workspaces": {
+        "rotate": 90,
+		"disable-scroll":true
+	},
+
+	"sway/mode": {
+        "rotate": 90,
+		"format": "<span style=\"italic\">{}</span>"
+	},
+
+	"sway/scratchpad": {
+    "rotate": 90,
+	"format": "{icon} {count}",
+	"show-empty": false,
+	"format-icons": ["",""],
+	"tooltip": true,
+	"tooltip-format": "{app}: {title}"
+	},
+
+	"clock": { 
+    "rotate": 90,
+    "timezone": "London",
+	"format": "{:%a %d %b %I:%M %p}",
+	"tooltip": false
+	},
+
+	"memory": {
+    "format": "  \n{}%",
+	"tooltip":false
+	},
+
+	"cpu": {
+    "format": " 󰧑\n{usage}%",
+	"tooltip": false
+	},
+
+	"temperature": {
+	"hwmon-path": "/sys/class/hwmon/hwmon5/temp1_input",
+	"format": "  \n{temperatureC}°C"
+	},
+
+	"battery": {
+	"format": " {icon}\n{capacity}%",
+	"format-charging": "{icon} {capacity}%",
+	"format-plugged": " {capacity}%",
+	"format-icons": ["", "", "", "", ""]
+	}
+}
