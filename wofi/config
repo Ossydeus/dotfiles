@@ -1,10 +1,10 @@
 term=foot
 location=top
-yoffset=180
-width=22%
+yoffset=80
+width=24%
 lines=8
 
-prompt=
+prompt=Search
 show=drun
 insensitive=true
 allow_images=true

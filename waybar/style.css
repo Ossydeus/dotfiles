@@ -1,4 +1,3 @@
-/* work in progress from scratch */
 /* See waybar-styles(5) for more info */
 /* modules to include:
     -sway/workspaces
@@ -14,22 +13,33 @@
     -temperature
     -battery 
 */
-/* Why does :root {} not work ??? */
+
+/* -*- GTK CSS (NOT HTML CSS) -*- */
+
+@define-color licorice #190f0d;
+@define-color red #b94734;
+@define-color orange-red #c24b11;
+@define-color dark-olive #50512f;
+@define-color pine #415242;
+@define-color green #4d5c2e;
+@define-color chamoise #8f7359;
+@define-color orange-brown #9d5d21;
+@define-color satin-gold #ca9f4e;
+@define-color beige #fcebba;
+@define-color platinum #d3dcde;
 
 * {
     font-family: "cascadia code";
-    font-size: 16px;
+    font-size: 22px;
     font-weight: 800;
-    padding: 0px 0px 0px 0px;
-    margin: 2px 0px 2px 0px;
-    border: none;
-    border-radius: 0;
 }
 
+/* --------------------
+       Colours
+-------------------- */
+
 window#waybar {
-    color: #a68f69;
-    /*background: #190f0d;
-    opacity:0.8;*/
+    color: @pine;
     background: transparent;
 }
 
@@ -45,41 +55,57 @@ window#waybar.hidden {
 #cpu,
 #temperature,
 #battery,
-#mode {
-    color: #d3dcde;
-    background-color: #456866;
-    opacity:0.8;
-    border: 4px solid #190f0d;
-    border-radius: 6px;
-    margin: 0px 3px 0px 3px; /* top|right|bottom|left */
-    padding: 2px 0px 2px 0px;
+#mode,
+#wireplumber {
+    color: @platinum;
+    background-color: @pine;
+    opacity:0.82;
+    border: 4px solid @licorice;
+    border-radius: 16px;
 }
 
 #workspaces button.active:hover,
 #workspaces button:hover,
 #workspaces button.visible:hover {
-    background: #ca9f4e;
-    opacity: 0.4;
+    background: @chamoise;
+    opacity: 0.6;
 }
 
 #workspaces button.focused {
-    background: #9d5d21;
-    opacity: 0.8;
+    background: @orange-brown;
+    opacity: 0.65;
 }
 
 #workspaces button.urgent {
 }
 
 #window{
-    color: #190f0d;
+    color: @licorice;
 }
 
-#clock,
+/* --------------------
+  Padding and Margins 
+-------------------- */
+
+#workspaces button,
+#workspaces button.active,
+#workspaces button.visible {
+    margin: 0px 3px 0px 3px; /* top|right|bottom|left */
+    padding: 3px 0px 3px 0px;
+}
+
 #memory,
 #cpu,
 #temperature,
 #battery,
-#mode {
-    margin: 0px 3px 0px 3px; /* top|right|bottom|left */
+#mode,
+#wireplumber {
+    margin: 0px 3px 0px 3px; 
+    padding: 16px 4px 8px 4px;
+}
+
+
+#clock {
+    margin: 0px 3px 0px 3px; 
     padding: 10px 4px 10px 4px;
 }

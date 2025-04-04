@@ -1,0 +1,3 @@
+https://github.com/bibjaw99/workstation/blob/master/.config/waybar/style.css
+
+https://github.com/ziap/dotfiles/blob/master/.config/waybar/config

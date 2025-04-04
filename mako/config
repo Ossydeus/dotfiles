@@ -1,0 +1,9 @@
+default-timeout=5000
+font=Cascadia code
+group-by=category
+
+[category=volume]
+default-timeout=1200
+
+[category=brightness]
+default-timeout=1200

@@ -1,3 +1,20 @@
+/* Can use colours file and import */
+/* To do:
+    - fix black corners
+*/
+
+@define-color licorice #190f0d;
+@define-color red #b94734;
+@define-color orange-red #c24b11;
+@define-color dark-olive #50512f;
+@define-color pine #415242;
+@define-color green #4d5c2e;
+@define-color chamoise #8f7359;
+@define-color orange-brown #9d5d21;
+@define-color satin-gold #ca9f4e;
+@define-color beige #fcebba;
+@define-color platinum #d3dcde;
+
 * {
     font-family: 'Cascadia code';
     font-size: 15px;
@@ -7,34 +24,42 @@
 
 #window {
     margin: 0px;
-    border: 0.0px solid;
-    border-color: rgb(235, 77, 129);
-    border-radius: 10px;
-    background-color: #8C7C73;
-    color:  /*rgb(235, 77, 129)*/ #f1f1f1;
+    border: 2px solid @platinum;
+    border-radius: 16px;
+    background-color: @pine;
+    color: @platinum;
+    opacity: 0.8;
+}
+
+#outer-box {
+    background-color: transparent;
 }
 
 #input {
-    margin: 15px;
-    background-color: rgb(112, 122, 137);
-    color: rgb(37, 38, 51);
+    margin: 16px;
+    background-color: @platinum;
+    opacity: 0.62;
+    color: @licorice; /* Text colour */
     border-radius: 25px;
-    border: 2px solid rgb(52, 64, 76);
+    border: 2px solid @satin-gold;
 }
 
 #scroll {
     margin-bottom: 15px;
 }
 
+#text {
+    color: @platinum;
+}
+
 #entry {
-    margin: 0px 15px;
+    margin: 0px 16px;
 }
 
 #entry:selected {
-    /*background-color: /*rgb(245, 98, 36);*/
-    background-color: #F59251;
-    border-radius: 0px;
-    border: none;
+    background-color: @orange-brown;
+    border-radius: 16px;
+    border: 2px solid @satin-gold;
     outline: none;
 }
 

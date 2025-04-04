@@ -5,17 +5,15 @@
 // --------------------------
 //
 // To do:
-//	- add media module (wireplumber)
-//  - adjust for new side position
-//      - sys-info span? either way make central
+//	- scratchpad?
 
+// -*- mode: jsonc -*-
 
-// _*- mode: jsonc -*-
 {
 	"layer": "top", // Waybar in front of windows
 	"position" : "left", //Waybar position (top|bottom|left|right)
 	//"height": 0, // Leave blank for dynamic value
-	"width": 52,
+	//"width": 40,
 	"spacing": 2, // Inter-module spacing 
 	"margin-top": 4,
 	"margin-left": 0,
@@ -24,30 +22,37 @@
 
 	// Choose the order of modules
 	"modules-left": [
-		"battery",
-		"cpu",
-		"memory",
-		"temperature",
-		"sway/mode",
+        "battery",
+        "group/hardware",
 		"sway/scratchpad"
 	],
 
 	"modules-center": [
-		"clock"
+		"clock",
+        "wireplumber",
+		"sway/mode"
 	],
 
 	"modules-right": [
-		"media",
-		"brightness",
 		"sway/workspaces"
 	],
 
 
 	// Modules configuration
-	"sway/workspaces": {
-        "rotate": 90,
-		"disable-scroll":true
-	},
+
+    "group/hardware": {
+        "orientation": "vertical",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "hardware",
+            "transition-left-to-right": "true"
+            },
+        "modules": [
+            "memory",
+            "cpu",
+            "temperature"
+            ]
+        },
 
 	"sway/mode": {
         "rotate": 90,
@@ -64,31 +69,48 @@
 	},
 
 	"clock": { 
+    "interval": 60,
+    "tooltip": true,
     "rotate": 90,
     "timezone": "London",
-	"format": "{:%a %d %b %I:%M %p}",
-	"tooltip": false
+	"format": "{:%I:%M %p}",
+    "tooltip-format": "{:%a %d %b}" 
 	},
 
 	"memory": {
-    "format": "  \n{}%",
+    "rotate": 90,
+    "format": " :{}%",
 	"tooltip":false
 	},
 
 	"cpu": {
-    "format": " 󰧑\n{usage}%",
+    "rotate": 90,
+    "format": "󰧑 :{usage}%",
 	"tooltip": false
 	},
 
 	"temperature": {
+    "rotate": 90,
 	"hwmon-path": "/sys/class/hwmon/hwmon5/temp1_input",
-	"format": "  \n{temperatureC}°C"
+	"format": ":{temperatureC}°C"
 	},
 
 	"battery": {
-	"format": " {icon}\n{capacity}%",
-	"format-charging": "{icon} {capacity}%",
-	"format-plugged": " {capacity}%",
-	"format-icons": ["", "", "", "", ""]
+    "rotate": 90,
+    "interval": 1,
+	"format": "{icon}:{capacity}%",
+	"format-charging": "󰂄:{capacity}%",
+	"format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+	},
+
+    "wireplumber": {
+        "rotate": 90,
+        "format": " :{volume}%",
+        "format-muted": "󰖁"
+    },
+
+	"sway/workspaces": {
+        "rotate": 90,
+		"disable-scroll":true
 	}
 }
