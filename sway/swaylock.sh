@@ -23,16 +23,16 @@ if  [[ $1 = "-now" ]]; then
         --inside-ver-color 190f0d85 \
         --inside-wrong-color 190f0d85 \
         --line-uses-inside \
-        --ring-color 4d632190 \
-        --ring-clear-color 4d632120 \
-        --ring-ver-color 4d632195 \
+        --ring-color 41524290 \
+        --ring-clear-color 41524220 \
+        --ring-ver-color 41524295 \
         --ring-wrong-color 190f0d85 \
         --separator-color 190f0d85 \
         --text-color ca9f4e \
         --text-clear-color ca9f4e \
         --text-ver-color ca9f4e \
         --text-wrong-color ca9f4e \
-        --key-hl-color 4d632190 \
+        --key-hl-color 41524290 \
         --bs-hl-color 190f0d85
 
 else
@@ -57,15 +57,15 @@ else
         --inside-ver-color 190f0d85 \
         --inside-wrong-color 190f0d85 \
         --line-uses-inside \
-        --ring-color 4d632190 \
-        --ring-clear-color 4d632120 \
-        --ring-ver-color 4d632195 \
+        --ring-color 41524290 \
+        --ring-clear-color 41524220 \
+        --ring-ver-color 41524295 \
         --ring-wrong-color 190f0d85 \
         --separator-color 190f0d85 \
         --text-color ca9f4e \
         --text-clear-color ca9f4e \
         --text-ver-color ca9f4e \
         --text-wrong-color ca9f4e \
-        --key-hl-color 4d632190 \
+        --key-hl-color 41524290 \
         --bs-hl-color 190f0d85
 fi

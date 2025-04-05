@@ -35,6 +35,23 @@
 }
 
 /* --------------------
+       Tooltips
+-------------------- */
+
+tooltip {
+    background-color: transparent;
+    border: none;
+}
+
+tooltip label {
+    background-color: @orange-brown;
+    color: @platinum;
+    opacity: 0.82;
+    border-radius: 12;
+    border: 4px solid @licorice;
+}
+
+/* --------------------
        Colours
 -------------------- */
 

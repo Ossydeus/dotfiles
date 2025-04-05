@@ -1,9 +1,35 @@
+#To do:
+#   - remove (n) if posible
+#   - tweak colours
+
 default-timeout=5000
 font=Cascadia code
 group-by=category
 
 [category=volume]
+
 default-timeout=1200
+font='Cascadia code' 16
+background-color=#41524295
+border-size=2
+border-color=#41524295
+border-radius=12
+text-color=#190f0d
+anchor=bottom-center
+outer-margin=0,0,60
+progress-color=over #d3dcde98
+history=0
 
 [category=brightness]
+
 default-timeout=1200
+font='Cascadia code' 16
+background-color=#41524295
+border-size=2
+border-color=#41524295
+border-radius=12
+text-color=#190f0d
+anchor=bottom-center
+outer-margin=0,0,60
+progress-color=over #d3dcde98
+history=0

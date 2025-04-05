@@ -49,16 +49,20 @@ bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. 
 # Utilities
 #---------------------
 
-# Special keys to adjust volume via wireplumber
-bindsym --locked XF86AudioMute exec wpctl set-mute @DEFAULT_SINK@ toggle
-bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_SINK@ 5%+
-bindsym --locked XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_SINK@ 5%-
+# Special keys to adjust volume via wireplumber, and send notifications to mako
+bindsym --locked XF86AudioMute exec wpctl set-mute @DEFAULT_SINK@ toggle 
 
+bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume -l 1.0 @DEFAULT_SINK@ 5%+ && notify-send -c volume -h int:value:$(echo "$(wpctl get-volume @DEFAULT_SINK@ | awk -F ': ' '{print $2}') * 100" | bc -l) "" 
+
+bindsym --locked XF86AudioLowerVolume exec wpctl set-volume -l 1.0 @DEFAULT_SINK@ 5%- && notify-send -c volume -h int:value:$(echo "$(wpctl get-volume @DEFAULT_SINK@ | awk -F ': ' '{print $2}') * 100" | bc -l) "" 
+# Keybing to toggle mic
 bindsym --locked XF86AudioMicMute exec wpctl set-mute @DEFAULT_SOURCE@ toggle
 
-# Special keys to adjust brightness via brightnessctl
-bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
-bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+# Special keys to adjust brightness via brightnessctl, and send notifications to mako
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%- && notify-send -c brightness -h int:value:"$(brightnessctl -md intel_backlight | awk -F, '{print $4}' | awk -F % '{print $1}')" "󰃜"
+
+bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+ && notify-send -c brightness -h int:value:"$(brightnessctl -md intel_backlight | awk -F , '{print $4}' | awk -F % '{print $1}')" "󰃛"
+
 # Special key to take a screenshot with grim
 bindsym Print exec grim
 

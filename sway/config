@@ -1,6 +1,9 @@
 # Reloads the config
 bindsym Mod4+Shift+c reload
 
+# Start notification deamon
+exec mako
+
 # Xwayland stuff
 for_window [shell='xwayland'] title_format "[XWayland] %title"
 

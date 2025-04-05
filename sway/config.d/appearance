@@ -9,32 +9,23 @@ output * bg $wallpaper fill
 # Colours
 #---------------------
 
-set $background #190f0d
-set $foreground #d3dcde
-
-set $color0 #190f0d
-set $color1 #9D5D21
-set $color2 #8F7359
-set $color3 #A68F69
-set $color4 #CA9F4E
-set $color5 #778189
-set $color6 #A09A96
-set $color7 #d3dcde
-set $color8 #939a9b
-set $color9 #9D5D21
-set $color10 #8F7359
-set $color11 #A68F69
-set $color12 #CA9F4E
-set $color13 #778189
-set $color14 #A09A96
-set $color15 #d3dcde
-
+set $black0 #190f0d
+set $white0 #d3dcde
+set $red0 #b94734
+set $red1 #c24b11
+set $green0 #50512f
+set $green1 #415242
+set $green2 #4d5c2e
+set $brown0 #9d5d21
+set $brown1 #9d5d21
+set $brown2 #ca9f4e
+set $brown3 #fcebba
 
 #app_id                          border          bground         text            indicator       child_border
-client.focused               $color2           $color2         $color1           $color2         $color2
-client.unfocused             $color2           $color1         $color2           $color1         $color1
-client.focused_inactive      $color2           $color1         $color2           $color1         $color1
-client.urgent                $color2           $color2         $color1           $color2         $color1
+client.focused               $brown1           $black0         $white0           $black0         $brown1
+client.unfocused             $green1           $black0         $white0           $black0         $green1
+client.focused_inactive      $green1           $black0         $white0           $black0         $green1
+client.urgent                $red0             $black0         $white0           $black0         $red0
 
 default_border pixel 2
 
