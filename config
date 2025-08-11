@@ -1,0 +1,42 @@
+# To Do:
+#   - Check commented-out drop-ins
+#   - How to assign Xwayland applications
+
+# Reloads the config
+bindsym Mod4+Shift+c reload
+
+# Launch pograms on session start
+exec mako
+exec '~/.config/sway/batsignal.sh'
+
+# Assign programs to specific workspaces
+#assign [class='steam'] workspace number 10
+#assign [class='Spotify', instance='spotify'] workspace number 9
+
+# Xwayland stuff
+for_window [shell='xwayland'] title_format "[XWayland] %title"
+
+# Waybar
+bar {
+	swaybar_command waybar
+}
+
+# Idle deamon to lock session
+# [11-08-25] added sleep, maybe more reliable now
+exec_always {
+    killall swayidle
+    sleep 0.2
+    swayidle -w \
+        timeout 360 '~/.config/sway/swaylock.sh' \
+        timeout 720 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+        before-sleep '~/.config/sway/swaylock.sh -now'
+}
+
+# Drop-in files
+include ~/.config/sway/config.d/50-system-user.conf
+include ~/.config/sway/config.d/keybinds
+#include ~/.config/sway/config.d/swayidle
+include ~/.config/sway/config.d/appearance
+include ~/.config/sway/config.d/keyboard-layout
+include ~/.config/sway/config.d/trackpad
+#include ~/.config/sway/config.d/laptop-lid-switch
