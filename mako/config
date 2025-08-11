@@ -3,13 +3,11 @@
 #   - tweak colours
 
 default-timeout=5000
-font=Cascadia code
+font='Cascadia code' 16
 group-by=category
 
 [category=volume]
-
 default-timeout=1200
-font='Cascadia code' 16
 background-color=#41524295
 border-size=2
 border-color=#41524295
@@ -21,9 +19,7 @@ progress-color=over #d3dcde98
 history=0
 
 [category=brightness]
-
 default-timeout=1200
-font='Cascadia code' 16
 background-color=#41524295
 border-size=2
 border-color=#41524295
@@ -33,3 +29,13 @@ anchor=bottom-center
 outer-margin=0,0,60
 progress-color=over #d3dcde98
 history=0
+
+[app-name=batsignal]
+default-timeout=12000
+background-color=#b9473499
+border-size=4
+border-color=#190f0d
+border-radius=4
+text-color=#d3dcde
+anchor=center
+layer=overlay
